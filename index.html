@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muhammad Arif | Full Stack Developer & AI Automation Specialist</title>
+  <meta name="description" content="Portfolio of Muhammad Arif - Full Stack Developer & AI Automation Specialist specializing in MERN stack, React.js, n8n workflows, and AI integrations.">
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          colors: {
+            emerald: {
+              400: '#34d399',
+              500: '#10b981',
+              600: '#059669',
+            },
+            cyan: {
+              400: '#22d3ee',
+              500: '#06b6d4',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #38bdf8 0%, #34d399 50%, #a78bfa 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .card-glass {
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .card-glass:hover {
+      border-color: rgba(52, 211, 153, 0.3);
+    }
+    .glow-bg {
+      position: absolute;
+      filter: blur(120px);
+      opacity: 0.15;
+      border-radius: 9999px;
+      pointer-events: none;
+    }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #020617; }
+    ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #334155; }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased selection:bg-emerald-500 selection:text-white">
+
+  <!-- ================= NAVBAR ================= -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-slate-950/85 backdrop-blur-md border-b border-slate-800/80 py-3.5 shadow-lg shadow-black/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between">
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-2.5 group">
+          <span class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500 to-cyan-500 flex items-center justify-center text-slate-950 font-black text-xl shadow-lg shadow-emerald-500/20 group-hover:scale-105 transition-transform">
+            A
+          </span>
+          <div class="flex flex-col">
+            <span class="text-base font-bold text-white tracking-tight flex items-center gap-1.5">
+              Muhammad Arif
+              <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            </span>
+            <span class="text-xs text-slate-400 font-mono tracking-wider">Full Stack & AI Dev</span>
+          </div>
+        </a>
+
+        <!-- Desktop Nav Links -->
+        <div class="hidden md:flex items-center gap-8">
+          <div class="flex items-center gap-6 text-sm font-medium text-slate-300">
+            <a href="#about" class="hover:text-emerald-400 transition-colors">About</a>
+            <a href="#skills" class="hover:text-emerald-400 transition-colors">Skills</a>
+            <a href="#projects" class="hover:text-emerald-400 transition-colors">Projects</a>
+            <a href="#experience" class="hover:text-emerald-400 transition-colors">Experience</a>
+            <a href="#services" class="hover:text-emerald-400 transition-colors">Services</a>
+            <a href="#contact" class="hover:text-emerald-400 transition-colors">Contact</a>
+          </div>
+
+          <div class="flex items-center gap-3 pl-4 border-l border-slate-800">
+            <a href="public/Muhammad_Arif_Resume.pdf" download="Muhammad_Arif_Resume.pdf" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-800/80 hover:bg-slate-700 text-slate-200 border border-slate-700 hover:border-emerald-500/50 transition">
+              <i data-lucide="file-text" class="w-3.5 h-3.5 text-emerald-400"></i>
+              Resume
+            </a>
+            <a href="https://www.fiverr.com/muhammadarif848" target="_blank" class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-lg text-xs font-semibold bg-emerald-500 hover:bg-emerald-400 text-slate-950 shadow-md shadow-emerald-500/20 transition hover:scale-105">
+              <span>Fiverr Profile</span>
+              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <div class="md:hidden flex items-center gap-2">
+          <a href="public/Muhammad_Arif_Resume.pdf" download="Muhammad_Arif_Resume.pdf" class="p-2 text-slate-300 hover:text-emerald-400" title="Download Resume">
+            <i data-lucide="file-text" class="w-5 h-5"></i>
+          </a>
+          <button id="mobile-toggle" class="p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-white">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden bg-slate-900/95 backdrop-blur-xl border-b border-slate-800 px-4 pt-3 pb-6 space-y-3">
+      <a href="#about" class="mobile-link block px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-emerald-400">About</a>
+      <a href="#skills" class="mobile-link block px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-emerald-400">Skills</a>
+      <a href="#projects" class="mobile-link block px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-emerald-400">Projects</a>
+      <a href="#experience" class="mobile-link block px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-emerald-400">Experience</a>
+      <a href="#services" class="mobile-link block px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-emerald-400">Services</a>
+      <a href="#contact" class="mobile-link block px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-emerald-400">Contact</a>
+      <div class="pt-3 border-t border-slate-800 flex flex-col gap-2">
+        <a href="public/Muhammad_Arif_Resume.pdf" download="Muhammad_Arif_Resume.pdf" class="flex items-center justify-center gap-2 w-full py-2.5 rounded-lg bg-slate-800 text-white font-medium text-sm">
+          <i data-lucide="file-text" class="w-4 h-4 text-emerald-400"></i>
+          Download Resume
+        </a>
+        <a href="https://www.fiverr.com/muhammadarif848" target="_blank" class="flex items-center justify-center gap-2 w-full py-2.5 rounded-lg bg-emerald-500 text-slate-950 font-bold text-sm">
+          <span>Order on Fiverr</span>
+          <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================= HERO ================= -->
+  <section class="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
+    <div class="glow-bg w-96 h-96 bg-emerald-500 top-10 left-1/4 -z-10"></div>
+    <div class="glow-bg w-96 h-96 bg-cyan-500 top-40 right-1/4 -z-10"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        <!-- Left Details -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-emerald-500/30 text-emerald-400 text-xs font-semibold tracking-wide">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+            <span>Available for Freelance & Full-time Roles</span>
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.15]">
+            Hi, I'm <span class="text-white">Muhammad Arif</span><br>
+            <span class="gradient-text">Full Stack Developer</span><br>
+            <span class="text-slate-300 font-semibold text-3xl sm:text-4xl lg:text-5xl flex items-center gap-2 mt-1">
+              & AI Automation Specialist
+            </span>
+          </h1>
+
+          <p class="text-base sm:text-lg text-slate-400 leading-relaxed max-w-2xl">
+            Computer Science graduate specializing in <strong class="text-slate-200">Full Stack MERN Architecture</strong> and modern web engineering, paired with practical <strong class="text-slate-200">AI Automation (n8n, Gemini API)</strong> to build high-performance web applications that automate business growth.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a href="#projects" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm shadow-lg shadow-emerald-500/25 transition-all hover:scale-[1.02]">
+              <span>View Projects</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+
+            <a href="https://www.fiverr.com/muhammadarif848" target="_blank" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm border border-slate-700 hover:border-emerald-500/50 transition-all hover:scale-[1.02]">
+              <i data-lucide="sparkles" class="w-4 h-4 text-emerald-400"></i>
+              <span>Hire on Fiverr</span>
+              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 text-slate-400"></i>
+            </a>
+
+            <a href="public/Muhammad_Arif_Resume.pdf" download="Muhammad_Arif_Resume.pdf" class="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-slate-900/60 hover:bg-slate-800 text-slate-300 font-medium text-sm border border-slate-800 hover:text-white transition">
+              <i data-lucide="download" class="w-4 h-4 text-cyan-400"></i>
+              <span>Resume</span>
+            </a>
+          </div>
+
+          <div class="pt-6 border-t border-slate-800/80 flex flex-wrap items-center gap-6 text-xs text-slate-400">
+            <div class="flex items-center gap-1.5">
+              <i data-lucide="map-pin" class="w-4 h-4 text-emerald-400"></i>
+              <span>Layyah & Lahore, Pakistan</span>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <i data-lucide="github" class="w-4 h-4 text-slate-400"></i>
+              <a href="https://github.com/hafizarifashiq-dev" target="_blank" class="hover:text-emerald-400 underline underline-offset-4">github.com/hafizarifashiq-dev</a>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <i data-lucide="mail" class="w-4 h-4 text-cyan-400"></i>
+              <a href="mailto:hafizarifashiq@gmail.com" class="hover:text-cyan-400">hafizarifashiq@gmail.com</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Terminal Mockup -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative mx-auto max-w-md card-glass rounded-2xl p-6 shadow-2xl border border-slate-800">
+            <div class="flex items-center justify-between pb-4 border-b border-slate-800/80 mb-5">
+              <div class="flex items-center gap-2">
+                <div class="w-3 h-3 rounded-full bg-rose-500/80"></div>
+                <div class="w-3 h-3 rounded-full bg-amber-500/80"></div>
+                <div class="w-3 h-3 rounded-full bg-emerald-500/80"></div>
+              </div>
+              <span class="text-xs font-mono text-slate-400">arif.config.js</span>
+              <span class="text-xs px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-mono">v2.0 active</span>
+            </div>
+
+            <div class="space-y-4 font-mono text-xs">
+              <div class="p-3.5 rounded-xl bg-slate-950/80 border border-slate-800/80 space-y-1.5">
+                <div class="text-slate-500">// Quick profile snapshot</div>
+                <div><span class="text-purple-400">const</span> <span class="text-blue-400">developer</span> = {</div>
+                <div class="pl-4"><span class="text-slate-400">name:</span> <span class="text-emerald-300">'Muhammad Arif'</span>,</div>
+                <div class="pl-4"><span class="text-slate-400">role:</span> <span class="text-emerald-300">'Full Stack & AI Automation Dev'</span>,</div>
+                <div class="pl-4"><span class="text-slate-400">currentWork:</span> <span class="text-cyan-300">'Intern @ Experts Cloud Software'</span>,</div>
+                <div class="pl-4"><span class="text-slate-400">education:</span> <span class="text-amber-300">'BSCS (CGPA 3.44/4.0)'</span>,</div>
+                <div class="pl-4"><span class="text-slate-400">coreStack:</span> [<span class="text-emerald-300">'React.js'</span>, <span class="text-emerald-300">'n8n'</span>, <span class="text-emerald-300">'Tailwind'</span>, <span class="text-emerald-300">'APIs'</span>]</div>
+                <div>};</div>
+              </div>
+
+              <div class="grid grid-cols-2 gap-3 pt-2">
+                <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800 flex items-center gap-3">
+                  <div class="p-2 rounded-lg bg-emerald-500/10 text-emerald-400">
+                    <i data-lucide="code-2" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <div class="text-xs font-semibold text-white">Modern React</div>
+                    <div class="text-[10px] text-slate-400">Hooks, Redux, Tailwind</div>
+                  </div>
+                </div>
+
+                <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800 flex items-center gap-3">
+                  <div class="p-2 rounded-lg bg-cyan-500/10 text-cyan-400">
+                    <i data-lucide="bot" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <div class="text-xs font-semibold text-white">AI Automation</div>
+                    <div class="text-[10px] text-slate-400">n8n, Gemini API, Sheets</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="p-3 rounded-xl bg-gradient-to-r from-emerald-950/40 to-cyan-950/40 border border-emerald-500/20 flex items-center justify-between text-xs">
+                <div class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                  <span class="text-slate-300">Ready for new client projects</span>
+                </div>
+                <a href="#contact" class="text-emerald-400 font-semibold hover:underline">Let's Talk &rarr;</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section id="about" class="py-24 relative border-t border-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-emerald-400 text-xs font-semibold tracking-wider uppercase">
+          Get to Know Me
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Bridging Frontend Design with <span class="gradient-text">Intelligent Automation</span>
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+          I don't just build UI; I craft digital experiences that solve real business bottlenecks.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7 space-y-6">
+          <h3 class="text-2xl font-bold text-white flex items-center gap-2">
+            <span>Hi, I'm Muhammad Arif</span>
+            <span>👋</span>
+          </h3>
+          <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
+            I am a <strong class="text-white">Computer Science graduate</strong> from MNS-University of Agriculture, Multan (CGPA: 3.44/4.0), currently sharpening my professional development chops as a <strong class="text-emerald-400 font-semibold">Frontend Developer Intern at Experts Cloud Software, Lahore</strong>.
+          </p>
+          <p class="text-slate-400 leading-relaxed text-sm sm:text-base">
+            My engineering journey is driven by two strong passions: creating seamless, responsive user interfaces with <strong class="text-slate-200">React.js & Tailwind CSS</strong>, and implementing <strong class="text-slate-200">AI-driven workflow automations</strong> using tools like <strong class="text-slate-200">n8n, Gemini AI API, and Google Cloud services</strong>.
+          </p>
+          <p class="text-slate-400 leading-relaxed text-sm sm:text-base">
+            Whether building full-stack platforms like <strong class="text-white">KisanMarket</strong> (MERN stack FYP connecting agricultural farmers directly to wholesale buyers) or automating lead qualifications with zero-touch AI agents, I focus on clean code, user happiness, and real commercial impact.
+          </p>
+
+          <div class="grid sm:grid-cols-2 gap-3 pt-3">
+            <div class="flex items-start gap-2.5">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+              <span class="text-xs sm:text-sm text-slate-300">Frontend Intern @ Experts Cloud Software</span>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+              <span class="text-xs sm:text-sm text-slate-300">BS Computer Science (CGPA: 3.44 / 4.0)</span>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+              <span class="text-xs sm:text-sm text-slate-300">Specialist in React.js & Tailwind CSS</span>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+              <span class="text-xs sm:text-sm text-slate-300">AI Automation with n8n & Gemini API</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 space-y-4">
+          <div class="card-glass p-6 rounded-2xl border border-slate-800 space-y-2 hover:border-emerald-500/30 transition">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+              <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+            </div>
+            <h4 class="text-base font-bold text-white">BS in Computer Science</h4>
+            <p class="text-xs text-slate-400">MNS-University of Agriculture, Multan (2022 - 2026)</p>
+            <div class="mt-2 inline-block px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-xs font-mono text-emerald-300">
+              CGPA: 3.44 / 4.0
+            </div>
+          </div>
+
+          <div class="card-glass p-6 rounded-2xl border border-slate-800 space-y-2 hover:border-cyan-500/30 transition">
+            <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400">
+              <i data-lucide="briefcase" class="w-5 h-5"></i>
+            </div>
+            <h4 class="text-base font-bold text-white">Current Industry Role</h4>
+            <p class="text-xs text-slate-400">Frontend Intern @ Experts Cloud Software, Lahore</p>
+            <p class="text-xs text-slate-500">Working with React.js, modern JS & production codebases</p>
+          </div>
+
+          <div class="card-glass p-6 rounded-2xl border border-slate-800 space-y-2 hover:border-purple-500/30 transition">
+            <div class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400">
+              <i data-lucide="zap" class="w-5 h-5"></i>
+            </div>
+            <h4 class="text-base font-bold text-white">AI Automation Edge</h4>
+            <p class="text-xs text-slate-400">n8n, Gemini AI, REST APIs & Google Sheets</p>
+            <p class="text-xs text-slate-500">Eliminating repetitive workflows into 24/7 background AI agents</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SKILLS ================= -->
+  <section id="skills" class="py-24 relative bg-slate-950/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-cyan-400 text-xs font-semibold tracking-wider uppercase">
+          Technical Arsenal
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Skills, Tools & <span class="gradient-text">Technologies</span>
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+          The modern frameworks, languages, and automation platforms I work with daily.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Frontend -->
+        <div class="card-glass p-6 rounded-2xl border border-slate-800 space-y-5">
+          <div class="flex items-center justify-between pb-3 border-b border-slate-800/80">
+            <div class="flex items-center gap-2.5">
+              <div class="p-2 rounded-lg bg-emerald-500/10 text-emerald-400">
+                <i data-lucide="code" class="w-5 h-5"></i>
+              </div>
+              <h3 class="text-base font-bold text-white">Frontend Ecosystem</h3>
+            </div>
+            <span class="text-xs px-2 py-0.5 rounded bg-slate-900 text-emerald-400 font-mono border border-slate-800">Specialty</span>
+          </div>
+
+          <div class="space-y-4">
+            <div>
+              <div class="flex justify-between text-xs font-medium mb-1.5"><span class="text-slate-200">React.js</span><span class="text-emerald-400 font-mono">90%</span></div>
+              <div class="w-full h-2 rounded-full bg-slate-900 overflow-hidden"><div class="h-full bg-gradient-to-r from-emerald-500 to-teal-400 w-[90%] rounded-full"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-xs font-medium mb-1.5"><span class="text-slate-200">JavaScript (ES6+)</span><span class="text-emerald-400 font-mono">88%</span></div>
+              <div class="w-full h-2 rounded-full bg-slate-900 overflow-hidden"><div class="h-full bg-gradient-to-r from-emerald-500 to-teal-400 w-[88%] rounded-full"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-xs font-medium mb-1.5"><span class="text-slate-200">Tailwind CSS</span><span class="text-emerald-400 font-mono">92%</span></div>
+              <div class="w-full h-2 rounded-full bg-slate-900 overflow-hidden"><div class="h-full bg-gradient-to-r from-emerald-500 to-teal-400 w-[92%] rounded-full"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-xs font-medium mb-1.5"><span class="text-slate-200">Redux Toolkit</span><span class="text-emerald-400 font-mono">82%</span></div>
+              <div class="w-full h-2 rounded-full bg-slate-900 overflow-hidden"><div class="h-full bg-gradient-to-r from-emerald-500 to-teal-400 w-[82%] rounded-full"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-xs font-medium mb-1.5"><span class="text-slate-200">HTML5 / CSS3</span><span class="text-emerald-400 font-mono">95%</span></div>
+              <div class="w-full h-2 rounded-full bg-slate-900 overflow-hidden"><div class="h-full bg-gradient-to-r from-emerald-500 to-teal-400 w-[95%] rounded-full"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- AI Automation -->
+        <div class="card-glass p-6 rounded-2xl border border-slate-800 space-y-5">
+          <div class="flex items-center justify-between pb-3 border-b border-slate-800/80">
+            <div class="flex items-center gap-2.5">
+              <div class="p-2 rounded-lg bg-cyan-500/10 text-cyan-400">
+                <i data-lucide="bot" class="w-5 h-5"></i>
+              </div>
+              <h3 class="text-base font-bold text-white">AI & Automation</h3>
+            </div>
+            <span class="text-xs px-2 py-0.5 rounded bg-slate-900 text-cyan-400 font-mono border border-slate-800">High Demand</span>
+          </div>
+
+          <div class="space-y-4">
+            <div>
+              <div class="flex justify-between text-xs font-medium mb-1.5"><span class="text-slate-200">n8n Workflow Automation</span><span class="text-cyan-400 font-mono">85%</span></div>
+              <div class="w-full h-2 rounded-full bg-slate-900 overflow-hidden"><div class="h-full bg-gradient-to-r from-cyan-500 to-blue-500 w-[85%] rounded-full"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-xs font-medium mb-1.5"><span class="text-slate-200">Gemini AI API</span><span class="text-cyan-400 font-mono">82%</span></div>
+              <div class="w-full h-2 rounded-full bg-slate-900 overflow-hidden"><div class="h-full bg-gradient-to-r from-cyan-500 to-blue-500 w-[82%] rounded-full"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-xs font-medium mb-1.5"><span class="text-slate-200">Prompt Engineering</span><span class="text-cyan-400 font-mono">90%</span></div>
+              <div class="w-full h-2 rounded-full bg-slate-900 overflow-hidden"><div class="h-full bg-gradient-to-r from-cyan-500 to-blue-500 w-[90%] rounded-full"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-xs font-medium mb-1.5"><span class="text-slate-200">Gmail & Sheets API</span><span class="text-cyan-400 font-mono">85%</span></div>
+              <div class="w-full h-2 rounded-full bg-slate-900 overflow-hidden"><div class="h-full bg-gradient-to-r from-cyan-500 to-blue-500 w-[85%] rounded-full"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-xs font-medium mb-1.5"><span class="text-slate-200">Python for AI (Basic)</span><span class="text-cyan-400 font-mono">65%</span></div>
+              <div class="w-full h-2 rounded-full bg-slate-900 overflow-hidden"><div class="h-full bg-gradient-to-r from-cyan-500 to-blue-500 w-[65%] rounded-full"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Backend & Databases -->
+        <div class="card-glass p-6 rounded-2xl border border-slate-800 space-y-5">
+          <div class="flex items-center justify-between pb-3 border-b border-slate-800/80">
+            <div class="flex items-center gap-2.5">
+              <div class="p-2 rounded-lg bg-purple-500/10 text-purple-400">
+                <i data-lucide="server" class="w-5 h-5"></i>
+              </div>
+              <h3 class="text-base font-bold text-white">Backend & Database</h3>
+            </div>
+            <span class="text-xs px-2 py-0.5 rounded bg-slate-900 text-purple-400 font-mono border border-slate-800">MERN Stack</span>
+          </div>
+
+          <div class="space-y-4">
+            <div>
+              <div class="flex justify-between text-xs font-medium mb-1.5"><span class="text-slate-200">Node.js</span><span class="text-purple-400 font-mono">75%</span></div>
+              <div class="w-full h-2 rounded-full bg-slate-900 overflow-hidden"><div class="h-full bg-gradient-to-r from-purple-500 to-indigo-500 w-[75%] rounded-full"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-xs font-medium mb-1.5"><span class="text-slate-200">Express.js</span><span class="text-purple-400 font-mono">75%</span></div>
+              <div class="w-full h-2 rounded-full bg-slate-900 overflow-hidden"><div class="h-full bg-gradient-to-r from-purple-500 to-indigo-500 w-[75%] rounded-full"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-xs font-medium mb-1.5"><span class="text-slate-200">MongoDB</span><span class="text-purple-400 font-mono">72%</span></div>
+              <div class="w-full h-2 rounded-full bg-slate-900 overflow-hidden"><div class="h-full bg-gradient-to-r from-purple-500 to-indigo-500 w-[72%] rounded-full"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-xs font-medium mb-1.5"><span class="text-slate-200">REST APIs & JWT</span><span class="text-purple-400 font-mono">88%</span></div>
+              <div class="w-full h-2 rounded-full bg-slate-900 overflow-hidden"><div class="h-full bg-gradient-to-r from-purple-500 to-indigo-500 w-[88%] rounded-full"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-xs font-medium mb-1.5"><span class="text-slate-200">MySQL</span><span class="text-purple-400 font-mono">70%</span></div>
+              <div class="w-full h-2 rounded-full bg-slate-900 overflow-hidden"><div class="h-full bg-gradient-to-r from-purple-500 to-indigo-500 w-[70%] rounded-full"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Developer Tools Bar -->
+      <div class="mt-12 p-6 rounded-2xl card-glass border border-slate-800 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-3">
+          <div class="p-2.5 rounded-xl bg-slate-800 text-emerald-400">
+            <i data-lucide="wrench" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h4 class="text-sm font-bold text-white">Daily Driver Tools</h4>
+            <p class="text-xs text-slate-400">Git, GitHub, Postman, VS Code, Vite, npm</p>
+          </div>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-slate-300">Git & GitHub</span>
+          <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-slate-300">Postman</span>
+          <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-slate-300">VS Code</span>
+          <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-slate-300">Vite</span>
+          <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-slate-300">Agile Workflow</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROJECTS ================= -->
+  <section id="projects" class="py-24 relative border-t border-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-emerald-400 text-xs font-semibold tracking-wider uppercase">
+          Proof of Work
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Featured <span className="gradient-text">Projects & Automations</span>
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+          Real-world applications and workflows engineered for scalability, responsiveness, and automation.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-3 gap-8">
+        <!-- Project 1: KisanMarket -->
+        <div class="card-glass rounded-2xl overflow-hidden border border-slate-800 hover:border-slate-700 transition flex flex-col group hover:-translate-y-1 duration-300 shadow-xl">
+          <div class="relative h-48 overflow-hidden bg-slate-900">
+            <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?q=80&w=800&auto=format&fit=crop" alt="KisanMarket" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+            <div class="absolute top-3 left-3">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-slate-950/80 backdrop-blur-md border border-emerald-500/30 text-emerald-300 text-xs font-semibold font-mono">
+                <i data-lucide="sparkles" class="w-3 h-3 text-emerald-400"></i>
+                Final Year Project (FYP)
+              </span>
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+            <div class="space-y-3">
+              <h3 class="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors">
+                KisanMarket — Agricultural Marketplace
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                A full-stack MERN agricultural platform bridging the gap between local Farmers and Wholesale Buyers. Features role-based dashboards for Farmers, Buyers, Transporters, and Admins.
+              </p>
+              <div class="space-y-1.5 pt-2">
+                <div class="flex items-start gap-2 text-xs text-slate-300">
+                  <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5"></i>
+                  <span>Role-Based Access Control (Admin, Farmer, Buyer, Transporter)</span>
+                </div>
+                <div class="flex items-start gap-2 text-xs text-slate-300">
+                  <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5"></i>
+                  <span>Direct crop listing & transparent price negotiation</span>
+                </div>
+              </div>
+            </div>
+            <div class="space-y-4 pt-4 border-t border-slate-800/80">
+              <div class="flex flex-wrap gap-1.5">
+                <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-[11px] font-mono text-slate-300">React.js</span>
+                <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-[11px] font-mono text-slate-300">Node.js</span>
+                <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-[11px] font-mono text-slate-300">MongoDB</span>
+                <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-[11px] font-mono text-slate-300">JWT</span>
+              </div>
+              <div class="flex items-center justify-between pt-1">
+                <a href="https://github.com/hafizarifashiq-dev" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-300 hover:text-white transition">
+                  <i data-lucide="github" class="w-4 h-4"></i>
+                  <span>Code Repository</span>
+                </a>
+                <a href="#contact" class="inline-flex items-center gap-1 text-xs font-semibold text-emerald-400 hover:text-emerald-300">
+                  <span>Discuss Project</span>
+                  <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: MyStore -->
+        <div class="card-glass rounded-2xl overflow-hidden border border-slate-800 hover:border-slate-700 transition flex flex-col group hover:-translate-y-1 duration-300 shadow-xl">
+          <div class="relative h-48 overflow-hidden bg-slate-900">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop" alt="MyStore" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+            <div class="absolute top-3 left-3">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-slate-950/80 backdrop-blur-md border border-cyan-500/30 text-cyan-300 text-xs font-semibold font-mono">
+                <i data-lucide="sparkles" class="w-3 h-3 text-cyan-400"></i>
+                React & Redux App
+              </span>
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+            <div class="space-y-3">
+              <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">
+                MyStore — Modern E-Commerce Platform
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                Feature-packed e-commerce web application built using React and Redux Toolkit. Integrated with external REST APIs for real-time product catalogs, cart management, and full CRUD operations.
+              </p>
+              <div class="space-y-1.5 pt-2">
+                <div class="flex items-start gap-2 text-xs text-slate-300">
+                  <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5"></i>
+                  <span>Global state management with Redux Toolkit</span>
+                </div>
+                <div class="flex items-start gap-2 text-xs text-slate-300">
+                  <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5"></i>
+                  <span>Dynamic filtering, search, and responsive cart checkout flow</span>
+                </div>
+              </div>
+            </div>
+            <div class="space-y-4 pt-4 border-t border-slate-800/80">
+              <div class="flex flex-wrap gap-1.5">
+                <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-[11px] font-mono text-slate-300">React.js</span>
+                <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-[11px] font-mono text-slate-300">Redux Toolkit</span>
+                <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-[11px] font-mono text-slate-300">Vite</span>
+                <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-[11px] font-mono text-slate-300">REST APIs</span>
+              </div>
+              <div class="flex items-center justify-between pt-1">
+                <a href="https://github.com/hafizarifashiq-dev" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-300 hover:text-white transition">
+                  <i data-lucide="github" class="w-4 h-4"></i>
+                  <span>Code Repository</span>
+                </a>
+                <a href="#contact" class="inline-flex items-center gap-1 text-xs font-semibold text-cyan-400 hover:text-cyan-300">
+                  <span>Discuss Project</span>
+                  <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: AI Automation -->
+        <div class="card-glass rounded-2xl overflow-hidden border border-slate-800 hover:border-slate-700 transition flex flex-col group hover:-translate-y-1 duration-300 shadow-xl">
+          <div class="relative h-48 overflow-hidden bg-slate-900">
+            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop" alt="AI Automation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+            <div class="absolute top-3 left-3">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-slate-950/80 backdrop-blur-md border border-purple-500/30 text-purple-300 text-xs font-semibold font-mono">
+                <i data-lucide="sparkles" class="w-3 h-3 text-purple-400"></i>
+                AI Automation / n8n
+              </span>
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+            <div class="space-y-3">
+              <h3 class="text-xl font-bold text-white group-hover:text-purple-400 transition-colors">
+                Intelligent Email & Lead Automation System
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                Autonomous lead qualification and email triage workflow. Leveraged n8n, Google Forms, and Gemini AI API to automatically classify incoming inquiries, enrich customer data into Google Sheets, and send personalized replies.
+              </p>
+              <div class="space-y-1.5 pt-2">
+                <div class="flex items-start gap-2 text-xs text-slate-300">
+                  <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-purple-400 shrink-0 mt-0.5"></i>
+                  <span>Zero-latency automated responses using LLM classification</span>
+                </div>
+                <div class="flex items-start gap-2 text-xs text-slate-300">
+                  <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-purple-400 shrink-0 mt-0.5"></i>
+                  <span>Direct synchronization with Google Sheets CRM</span>
+                </div>
+              </div>
+            </div>
+            <div class="space-y-4 pt-4 border-t border-slate-800/80">
+              <div class="flex flex-wrap gap-1.5">
+                <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-[11px] font-mono text-slate-300">n8n</span>
+                <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-[11px] font-mono text-slate-300">Gemini AI</span>
+                <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-[11px] font-mono text-slate-300">Gmail API</span>
+                <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-[11px] font-mono text-slate-300">Google Sheets</span>
+              </div>
+              <div class="flex items-center justify-between pt-1">
+                <a href="https://github.com/hafizarifashiq-dev" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-300 hover:text-white transition">
+                  <i data-lucide="github" class="w-4 h-4"></i>
+                  <span>Code Repository</span>
+                </a>
+                <a href="#contact" class="inline-flex items-center gap-1 text-xs font-semibold text-purple-400 hover:text-purple-300">
+                  <span>Discuss Project</span>
+                  <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= EXPERIENCE ================= -->
+  <section id="experience" class="py-24 relative bg-slate-950/40 border-t border-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-purple-400 text-xs font-semibold tracking-wider uppercase">
+          Trajectory
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Work Experience & <span className="gradient-text">Education</span>
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+          Hands-on professional training combined with a strong computer science academic foundation.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-12">
+        <!-- Work Experience -->
+        <div class="space-y-6">
+          <div class="flex items-center gap-3 pb-2 border-b border-slate-800">
+            <div class="p-2.5 rounded-xl bg-emerald-500/10 text-emerald-400">
+              <i data-lucide="briefcase" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-white">Work Experience</h3>
+              <p class="text-xs text-slate-400">Professional internships & software roles</p>
+            </div>
+          </div>
+
+          <div class="space-y-6">
+            <div class="card-glass p-5 rounded-2xl border border-slate-800 space-y-3">
+              <div class="flex items-center justify-between">
+                <h4 class="text-base font-bold text-white">Frontend Developer — Intern</h4>
+                <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 text-[11px] font-semibold border border-emerald-500/20">Active Role</span>
+              </div>
+              <div class="text-xs text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+                <span class="text-emerald-300 font-medium">Experts Cloud Software</span>
+                <span>Bahria Town, Lahore</span>
+                <span class="font-mono text-slate-500">Aug 2026 – Present</span>
+              </div>
+              <ul class="space-y-1.5 pt-2 border-t border-slate-800/80 text-xs text-slate-300">
+                <li class="flex items-start gap-2">
+                  <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5"></i>
+                  <span>Learning and working with HTML, CSS, JavaScript, and React.js under senior developer guidance.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5"></i>
+                  <span>Involved in UI tasks, debugging, and understanding real-world development workflows.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="card-glass p-5 rounded-2xl border border-slate-800 space-y-3">
+              <div class="flex items-center justify-between">
+                <h4 class="text-base font-bold text-white">E-Commerce Product Hunter — Intern</h4>
+                <span class="text-xs font-mono text-slate-500">Jun 2026 – Jul 2026</span>
+              </div>
+              <div class="text-xs text-slate-400">
+                <span class="text-emerald-300 font-medium">Swift Cart III</span> • Multan
+              </div>
+              <ul class="space-y-1.5 pt-2 border-t border-slate-800/80 text-xs text-slate-300">
+                <li class="flex items-start gap-2">
+                  <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5"></i>
+                  <span>Researched and identified winning products for e-commerce store listings.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5"></i>
+                  <span>Analyzed market trends, competitor pricing, and demand to optimize catalog.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Education -->
+        <div class="space-y-6">
+          <div class="flex items-center gap-3 pb-2 border-b border-slate-800">
+            <div class="p-2.5 rounded-xl bg-purple-500/10 text-purple-400">
+              <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-white">Education</h3>
+              <p class="text-xs text-slate-400">Formal university degree & credentials</p>
+            </div>
+          </div>
+
+          <div class="card-glass p-5 rounded-2xl border border-slate-800 space-y-3">
+            <div class="flex items-center justify-between">
+              <h4 class="text-base font-bold text-white">BS in Computer Science</h4>
+              <span class="px-2.5 py-0.5 rounded-full bg-purple-500/10 text-purple-300 text-[11px] font-semibold border border-purple-500/20 font-mono">
+                CGPA: 3.44 / 4.0
+              </span>
+            </div>
+            <div class="text-xs text-slate-400 flex flex-wrap gap-x-4 gap-y-1">
+              <span class="text-purple-300 font-medium">MNS-University of Agriculture, Multan</span>
+              <span class="font-mono text-slate-500">2022 – 2026</span>
+            </div>
+            <p class="text-xs text-slate-400 leading-relaxed pt-2 border-t border-slate-800/80">
+              Specialized in Web Development, Software Engineering, Database Systems, Data Structures, and AI.
+            </p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-gradient-to-r from-emerald-950/30 to-purple-950/30 border border-slate-800 space-y-2">
+            <h4 class="text-sm font-bold text-white">Continuous Growth & Certifications</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Actively mastering Advanced React State Management, AI Agents with n8n & Gemini, and Full-Stack Cloud Architecture.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SERVICES ================= -->
+  <section id="services" class="py-24 relative border-t border-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-emerald-400 text-xs font-semibold tracking-wider uppercase">
+          What I Deliver
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Freelance & Engineering <span className="gradient-text">Services</span>
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+          High-converting solutions designed for businesses, startups, and clients seeking fast execution.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="card-glass p-8 rounded-2xl border border-slate-800 space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center">
+            <i data-lucide="layout" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white">Custom Frontend Development</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">Pixel-perfect, lightning-fast web interfaces built with React.js and Tailwind CSS. Clean, maintainable code optimized for SEO and conversion.</p>
+        </div>
+
+        <div class="card-glass p-8 rounded-2xl border border-slate-800 space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center">
+            <i data-lucide="server" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white">MERN Full-Stack Solutions</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">End-to-end web applications combining React frontends with Node.js/Express backends and MongoDB databases, with secure REST APIs & JWT authentication.</p>
+        </div>
+
+        <div class="card-glass p-8 rounded-2xl border border-slate-800 space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center">
+            <i data-lucide="bot" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white">AI & Workflow Automation</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">Streamline repetitive business tasks using n8n, Gemini AI API, Google Sheets, and Gmail integrations to save hours of manual effort.</p>
+        </div>
+
+        <div class="card-glass p-8 rounded-2xl border border-slate-800 space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center">
+            <i data-lucide="zap" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white">API Integrations & Bug Fixing</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">Connecting 3rd-party REST APIs, payment gateways, fixing frontend bugs, state management refactoring, and responsiveness fixes.</p>
+        </div>
+      </div>
+
+      <!-- Fiverr Callout -->
+      <div class="mt-16 card-glass p-8 rounded-3xl border border-emerald-500/30 flex flex-col lg:flex-row items-center justify-between gap-6 bg-gradient-to-r from-emerald-950/40 via-slate-900 to-cyan-950/40">
+        <div class="space-y-2 text-center lg:text-left">
+          <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-300 text-xs font-semibold border border-emerald-500/20">Fiverr Seller • Escrow Protected</span>
+          <h3 class="text-2xl font-extrabold text-white">Need a Custom Gig or Urgent Delivery?</h3>
+          <p class="text-slate-300 text-sm max-w-xl">I take on direct contracts and Fiverr milestones with 100% money-back satisfaction and fast turnaround times.</p>
+        </div>
+        <a href="https://www.fiverr.com/muhammadarif848" target="_blank" class="px-8 py-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm shadow-xl shadow-emerald-500/25 transition-all hover:scale-105 shrink-0">
+          Order on Fiverr Profile &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section id="contact" class="py-24 relative bg-slate-950/60 border-t border-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-emerald-400 text-xs font-semibold tracking-wider uppercase">
+          Let's Collaborate
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Get in <span class="gradient-text">Touch</span>
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+          Have a project in mind, want to automate a process, or looking to hire a frontend engineer? Let's connect!
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-12 gap-12">
+        <!-- Contact Cards -->
+        <div class="lg:col-span-5 space-y-6">
+          <div class="card-glass p-5 rounded-2xl border border-slate-800 flex items-center justify-between gap-4">
+            <div class="flex items-center gap-3.5 min-w-0">
+              <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
+                <i data-lucide="mail" class="w-6 h-6"></i>
+              </div>
+              <div class="min-w-0">
+                <div class="text-xs text-slate-400 font-medium">Direct Email</div>
+                <a href="mailto:hafizarifashiq@gmail.com" class="text-sm font-semibold text-white hover:text-emerald-400 truncate block">hafizarifashiq@gmail.com</a>
+              </div>
+            </div>
+            <button id="copy-email-btn" class="p-2.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-emerald-400 border border-slate-700 transition" title="Copy Email">
+              <i data-lucide="copy" class="w-4 h-4"></i>
+            </button>
+          </div>
+
+          <div class="card-glass p-5 rounded-2xl border border-slate-800 flex items-center justify-between gap-4">
+            <div class="flex items-center gap-3.5">
+              <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 shrink-0">
+                <i data-lucide="phone" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <div class="text-xs text-slate-400 font-medium">WhatsApp & Phone</div>
+                <a href="https://wa.me/923032358794" target="_blank" class="text-sm font-semibold text-white hover:text-cyan-400">+92 303-2358794</a>
+              </div>
+            </div>
+            <a href="https://wa.me/923032358794" target="_blank" class="px-3 py-1.5 rounded-lg bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-xs font-semibold flex items-center gap-1 transition">
+              <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
+              <span>Chat</span>
+            </a>
+          </div>
+
+          <div class="card-glass p-5 rounded-2xl border border-slate-800 flex items-center gap-3.5">
+            <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 shrink-0">
+              <i data-lucide="map-pin" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <div class="text-xs text-slate-400 font-medium">Current Location</div>
+              <div class="text-sm font-semibold text-white">Layyah & Lahore, Pakistan (PKT / UTC+5)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div class="lg:col-span-7">
+          <div class="card-glass p-8 rounded-3xl border border-slate-800 shadow-2xl">
+            <h3 class="text-xl font-bold text-white mb-2">Send a Message</h3>
+            <p class="text-xs text-slate-400 mb-6">Fill out the form below to initiate an email to me.</p>
+
+            <form id="contact-form" class="space-y-4">
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div class="space-y-1.5">
+                  <label class="text-xs font-semibold text-slate-300">Your Name *</label>
+                  <input type="text" id="form-name" required placeholder="e.g. John Doe" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-white text-sm focus:outline-none focus:border-emerald-500 transition">
+                </div>
+                <div class="space-y-1.5">
+                  <label class="text-xs font-semibold text-slate-300">Your Email *</label>
+                  <input type="email" id="form-email" required placeholder="e.g. john@example.com" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-white text-sm focus:outline-none focus:border-emerald-500 transition">
+                </div>
+              </div>
+              <div class="space-y-1.5">
+                <label class="text-xs font-semibold text-slate-300">Subject</label>
+                <input type="text" id="form-subject" placeholder="Project Inquiry / Job Opportunity" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-white text-sm focus:outline-none focus:border-emerald-500 transition">
+              </div>
+              <div class="space-y-1.5">
+                <label class="text-xs font-semibold text-slate-300">Your Message *</label>
+                <textarea id="form-message" required rows="4" placeholder="Tell me about your project, timeline, budget..." class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-white text-sm focus:outline-none focus:border-emerald-500 transition resize-none"></textarea>
+              </div>
+              <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-400 hover:from-emerald-400 hover:to-teal-300 text-slate-950 font-bold text-sm shadow-xl shadow-emerald-500/20 transition-all flex items-center justify-center gap-2 hover:scale-[1.01]">
+                <i data-lucide="send" class="w-4 h-4"></i>
+                <span>Send Message Directly</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="border-t border-slate-900 bg-slate-950 py-12 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-2.5">
+          <span class="w-8 h-8 rounded-lg bg-emerald-500 flex items-center justify-center text-slate-950 font-black text-sm">A</span>
+          <div>
+            <span class="text-base font-bold text-white block">Muhammad Arif</span>
+            <span class="text-xs text-slate-400">Full Stack Developer & AI Automation Specialist</span>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-4">
+          <a href="https://github.com/hafizarifashiq-dev" target="_blank" class="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 hover:text-white transition">
+            <i data-lucide="github" class="w-4 h-4"></i>
+          </a>
+          <a href="https://www.fiverr.com/muhammadarif848" target="_blank" class="px-3.5 py-2 rounded-xl bg-slate-900 border border-slate-800 text-emerald-400 font-bold text-xs hover:border-emerald-500/40 transition">
+            Fiverr
+          </a>
+          <a href="mailto:hafizarifashiq@gmail.com" class="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 hover:text-cyan-400 transition">
+            <i data-lucide="mail" class="w-4 h-4"></i>
+          </a>
+          <a href="https://wa.me/923032358794" target="_blank" class="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 hover:text-emerald-400 transition">
+            <i data-lucide="phone" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="p-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-white border border-slate-800 transition" title="Back to Top">
+          <i data-lucide="arrow-up" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+      <div class="mt-8 pt-8 border-t border-slate-900 text-center text-xs text-slate-500">
+        &copy; 2026 Muhammad Arif. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Initialize icons
+    lucide.createIcons();
+
+    // Mobile menu toggle
+    const toggle = document.getElementById('mobile-toggle');
+    const menu = document.getElementById('mobile-menu');
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => menu.classList.add('hidden'));
+    });
+
+    // Copy Email button
+    const copyBtn = document.getElementById('copy-email-btn');
+    copyBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText('hafizarifashiq@gmail.com');
+      copyBtn.innerHTML = '<i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>';
+      lucide.createIcons();
+      setTimeout(() => {
+        copyBtn.innerHTML = '<i data-lucide="copy" class="w-4 h-4"></i>';
+        lucide.createIcons();
+      }, 2500);
+    });
+
+    // Contact form mailto submit
+    const contactForm = document.getElementById('contact-form');
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('form-name').value;
+      const email = document.getElementById('form-email').value;
+      const subject = document.getElementById('form-subject').value || 'Portfolio Inquiry from ' + name;
+      const message = document.getElementById('form-message').value;
+
+      const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+      window.location.href = `mailto:hafizarifashiq@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    });
+  </script>
+</body>
+</html>
+
